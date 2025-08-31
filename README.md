@@ -1,4 +1,4 @@
-# DiskInfoArtificial
+<img width="1816" height="240" alt="{D6FF4065-FA1C-4647-8ABF-4558F83ECAE3}" src="https://github.com/user-attachments/assets/69afe20c-b6a6-40a9-b543-3aab2a3c1c00" /># DiskInfoArtificial
 
 this Project is CrystalDiskInfo artificial format of csharp ,
 
@@ -18,8 +18,10 @@ u ur windows checked it then u have to uncheck this option ,
 select x86 or x64 bit , do not run at AnyCPU , it will be crash or u will get corrupted information , 
 
 u can get information in two format cmd ; args 
+```
 exe -E ex {u will get all information which extracted }
 exe -O op {u will get optimized information except bool 0 and null }
+```
 
 the code ended here 
 <img width="1767" height="206" alt="{D7266C3F-B8AF-4C57-BDD8-3522D43250AE}" src="https://github.com/user-attachments/assets/a4dc49b8-adb2-43d2-87ac-8119ebbc5356" />
