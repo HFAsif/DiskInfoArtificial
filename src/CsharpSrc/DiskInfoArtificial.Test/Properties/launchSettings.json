@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DiskInfoArtificial.Test": {
+      "commandName": "Project",
+      "commandLineArgs": "-O op"
+    }
+  }
+}

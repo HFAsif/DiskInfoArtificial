@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>3d03efe8-15b4-422a-b18c-9f089abe1f46</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DiskInfoArtificial.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificial.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManager.Partial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManagerAbstract.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManagerAttr.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalFunctions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDiskInfoArtificialManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JunkCodes.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\CAtaSmartArtificial.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\CAtaSmartArtificialBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\DiskInfoArtificialManager_NativeCaller.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\DiskInfoArtificialManager_Static_Methods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\DiskInfoArtificialManager_Structures.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\ImportantElements_Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\ImportantElements_Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\WindowsVersionChecker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\WindowsVersionCheckerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainEntry.cs" />
+  </ItemGroup>
+</Project>

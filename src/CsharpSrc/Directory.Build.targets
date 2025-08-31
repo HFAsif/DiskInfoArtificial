@@ -1,0 +1,9 @@
+<Project>
+	<PropertyGroup>
+
+		<AssemblyOriginatorKeyFile>$(SolutionDir)DiskInfoArtificial.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<!--<DelaySign>true</DelaySign>-->
+		 <!--<DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>-->
+	</PropertyGroup>
+</Project>

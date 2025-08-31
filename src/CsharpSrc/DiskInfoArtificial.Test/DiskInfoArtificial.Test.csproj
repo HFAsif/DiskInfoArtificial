@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="$(SolutionDir)_configs/dotnetframeworks.props" />
+	<Import Project="$(SolutionDir)_configs/ExeConfigs.props" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <Platforms>AnyCPU;x86;x64</Platforms>
+	  <NoWarn>CS0649</NoWarn>
+	  <Configurations>Debug;Release;net_4_0_Debug</Configurations>
+	  <!--<AllowUnsafeBlocks>true</AllowUnsafeBlocks>-->
+  </PropertyGroup>
+
+	<!--<PropertyGroup Condition="'$(AllowUnsafeBlocks)' == 'true'">
+		<DefineConstants>$(DefineConstants);_Unsafe_</DefineConstants>
+	</PropertyGroup>-->
+	
+	<ItemGroup>
+		<Content Include="$(SolutionDir)_configs/appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<Choose>
+		<When Condition="'$(Platform)'=='x86'" />
+		<When Condition="'$(Platform)'=='x64'">
+
+			<ItemGroup>
+				<!--<ProjectReference Include="..\Interfaces.x64\Interfaces.x64.csproj" />-->
+				<!--<Reference Include="ManagedTDK">
+					<HintPath>..\..\..\Libsref\x64\ManagedTDK.dll</HintPath>
+				</Reference>-->
+			</ItemGroup>
+		</When>
+		<Otherwise>
+
+		</Otherwise>
+	</Choose>
+
+	<ItemGroup>
+	  <!--<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.8" />-->
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\InternalLibrary\InternalLibrary.csproj" />
+	</ItemGroup>
+
+	
+</Project>

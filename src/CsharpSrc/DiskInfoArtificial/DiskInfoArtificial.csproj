@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<!--<Import Condition="'$(TargetFramework)' == 'net40-Client' Or '$(TargetFramework)' == 'net40' " Project="$(SolutionDir)_configs/dotnetFour.props" />-->
+	
+	<Import Project="$(SolutionDir)_configs/dotnetframeworkscustom.props" />
+	
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	  <Platforms>AnyCPU;x86;x64</Platforms>
+	  <NoWarn>CS0219;CS0414;CA1416</NoWarn>
+	  <OutputType>Library</OutputType>
+	  <Configurations>Debug;Release;net_4_0_Debug</Configurations>
+	  <DefineConstants>$(DefineConstants);ThisProjectAvailable;</DefineConstants>
+  </PropertyGroup>
+
+	<!--<Choose>
+		<When Condition="'$(Platform)'=='x86'">
+
+			<ItemGroup>
+				<ProjectReference Include="..\Interfaces\Interfaces.csproj" />
+			</ItemGroup>
+		</When>
+		<When Condition="'$(Platform)'=='x64'">
+
+			<ItemGroup>
+				<ProjectReference Include="..\Interfaces.x64\Interfaces.x64.csproj" />
+			</ItemGroup>
+		</When>
+		<Otherwise>
+			
+		</Otherwise>
+	</Choose>-->
+
+	
+
+	<Import Project="..\..\SharedSrc\DiskInfoArtificial.Shared\DiskInfoArtificial.Shared.projitems" Label="Shared" />
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DiskInfoArtificial.Extension\DiskInfoArtificial.Extension.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals('$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)'))','4.5'))">
+	  <PackageReference Include="System.Management">
+	    <Version>9.0.8</Version>
+	  </PackageReference>
+
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+	</ItemGroup>
+
+
+	
+
+</Project>

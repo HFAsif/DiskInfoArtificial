@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="$(SolutionDir)_configs/dotnetframeworks.props" />
+	
+  <PropertyGroup>
+	  <Platforms>AnyCPU;x86;x64</Platforms>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <Compile Remove="CheckDiskInfos\DiskInfoArtificialCheckEx.cs" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Include="CheckDiskInfos\DiskInfoArtificialCheckEx.cs" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="envdte" Version="17.14.40260" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.8" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\DiskInfoArtificial\DiskInfoArtificial.csproj" />
+	</ItemGroup>
+
+</Project>
