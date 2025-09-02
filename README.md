@@ -1,8 +1,6 @@
-<img width="1816" height="240" alt="{D6FF4065-FA1C-4647-8ABF-4558F83ECAE3}" src="https://github.com/user-attachments/assets/69afe20c-b6a6-40a9-b543-3aab2a3c1c00" /># DiskInfoArtificial
-
 this Project is CrystalDiskInfo artificial format of csharp ,
 
-href="https://github.com/awesome-selfhosted/awesome-selfhosted?tab=readme-ov-file#url-shorteners"
+[CrystalDiskInfo](https://github.com/hiyohiyo/CrystalDiskInfo) 
 
 this project wasnt completed , i have commented where i have ended 
 
