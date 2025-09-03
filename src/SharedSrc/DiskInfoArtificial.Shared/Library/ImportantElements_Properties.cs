@@ -3,7 +3,7 @@ namespace DiskInfoArtificial.Library
 {
     using System;
 
-    internal static class ImportantElements_Properties
+    static class ImportantElements_Properties
     {
 
          public const int PAGE_NOACCESS                   = 0x01        ;

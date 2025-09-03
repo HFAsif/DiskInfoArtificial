@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary.CheckDiskInfos;
+﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-public class DiskInfoArtificialCheck : IDiskInfoArtificialCheck
+public class CrystalDiskInfoDotnetLoadInformation 
 {
     public required OutPutInfos InfoType { get; set; }
     public required object ataInfos { get; set; }
@@ -56,7 +56,7 @@ public class DiskInfoArtificialCheck : IDiskInfoArtificialCheck
     }
 
 
-    public void ExternalRun(out ObservableCollection<ExtendedInfosStruct> infoForCasts, out ReadOnlyCollectionBuilder<ObservableCollection<KeyValuePair<string, string>>> OptimizedListBuilder)
+    public void LoadInformation(out ObservableCollection<ExtendedInfosStruct> infoForCasts, out ReadOnlyCollectionBuilder<ObservableCollection<KeyValuePair<string, string>>> OptimizedListBuilder)
     {
         Unsafe.SkipInit(out infoForCasts);
         Unsafe.SkipInit(out OptimizedListBuilder);
@@ -101,6 +101,6 @@ public class DiskInfoArtificialCheck : IDiskInfoArtificialCheck
     {
         Debugger.Break();
         //not setted or Invalid Operation so
-        throw new InvalidOperationException("not setted");
+        throw new InvalidOperationException($"Getting exception ");
     }
 }

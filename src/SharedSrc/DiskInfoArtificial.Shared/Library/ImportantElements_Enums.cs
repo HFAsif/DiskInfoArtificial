@@ -5,7 +5,7 @@ namespace DiskInfoArtificial.Library
     using System;
     using static ImportantElements_Properties;
 
-    public class ImportantElements_Enums
+    class ImportantElements_Enums
     {
         [Flags]
         internal enum INTERFACE_TYPE

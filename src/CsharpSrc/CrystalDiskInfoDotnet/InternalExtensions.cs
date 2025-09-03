@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary;
+﻿namespace CrystalDiskInfoDotnet;
 using EnvDTE;
 
 using Microsoft.VisualStudio.OLE.Interop;

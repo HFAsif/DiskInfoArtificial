@@ -16,7 +16,7 @@ namespace DiskInfoArtificial
     using HelperClass;
 
     [DiskInfoArtificialManagerAttr]
-    internal sealed partial class DiskInfoArtificialManager : DiskInfoArtificialManagerAbstract, IDiskInfoArtificialManager
+    sealed partial class DiskInfoArtificialManager : DiskInfoArtificialManagerAbstract, IDiskInfoArtificialManager
     {
         public override bool StartUp()
         {
@@ -66,8 +66,9 @@ namespace DiskInfoArtificial
 //            return retval;
 //        }
 
-        public override bool InternalStartup()
+        public override bool InternalStartup(out object ObjList)
         {
+            Unsafe.SkipInit(out ObjList);
             ATA_SMART_INFO asi;
             Unsafe.SkipInit(out asi);
             bool flagBlackList = false;
@@ -274,6 +275,14 @@ namespace DiskInfoArtificial
                 }
             }
 
+            if(aTA_SMART_INFOs.Count > 0)
+            {
+                ObjList = aTA_SMART_INFOs;
+            }
+            else
+            {
+                Debugger.Break();   
+            }
             return true;
         }
 

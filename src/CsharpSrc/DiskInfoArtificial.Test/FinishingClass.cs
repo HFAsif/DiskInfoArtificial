@@ -3,63 +3,67 @@
 using Microsoft.Extensions.Logging;
 using System.Reflection;
 using System;
-using InternalLibrary.CheckDiskInfos;
 using System.Linq;
-using InternalLibrary;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using EnvDTE80;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
+using CrystalDiskInfoDotnet.CheckDiskInfos;
+using CrystalDiskInfoDotnet;
 
-internal class FinishingClass : FinishingClassBase
+internal class FinishingClass : CrystalDiskInfoDotnetBase
 {
-    public required string DiskInfoArtificialEndedAt;
-    public required object ataLists;
-    public required ILogger logger;
-    public required Cac.Options Options;
-
-
-    public required string[] args {  get; set; }
 
     [SomeElementsInfos("Coded internal")]
     [FinishingClassAttr]
-    public void EndingMethod()
+    public override void ExtracInformation()
     {
-       
         Console.Title = GetTitle();
         var prgAttr = MethodBase.GetCurrentMethod().GetCustomAttribute<FinishingClassAttr>();
         prgAttr.PrimaryWorker(logger);
 
-        IDiskInfoArtificialCheck diskInfoArtificialManager = new DiskInfoArtificialCheck()
-        {
-            ataInfos = ataLists, 
-            InfoType = Options.outPutInfos
-        };
+        #region MyRegion
+        //ICrystalDiskInfoDotnet diskInfoArtificialManager = new CrystalDiskInfoDotnetLoad()
+        //{
+        //    ataLists = ataLists,
+        //    DiskInfoArtificialEndedAt = 
+        //};
 
-        diskInfoArtificialManager.ExternalRun(out var infoForCasts, out var optimizedListBuilder);
+        //diskInfoArtificialManager.ExternalRun(out var infoForCasts, out var optimizedListBuilder); 
+        #endregion
 
+        //crystalDiskInfoDotnet.LoadInformation(out var infoForCasts, out var OptimizedListBuilder);
+        base.ExtracInformation(out var infoForCasts, out var optimizedListBuilder);
         
         //EnvDTE.DTE dte = (EnvDTE.DTE)GetActiveObject("VisualStudio.DTE");
-        if(optimizedListBuilder is not null)
+        if (optimizedListBuilder is not null)
         {
-            
-            foreach (var item in optimizedListBuilder)
+            var build = optimizedListBuilder.ToReadOnlyCollection();
+            foreach (var item in build)
             {
                 Console.WriteLine(Environment.NewLine + Environment.NewLine);
-                foreach (var item2 in item)
+                if (item is not null)
                 {
-                    Console.WriteLine(item2.Key + "  :  " + item2.Value);
+                    foreach (var item2 in item)
+                    {
+                        //Console.WriteLine(Environment.NewLine + Environment.NewLine);
+                        Console.WriteLine(item2.Key + "  :  " + item2.Value);
+                    }
                 }
+                
             }
-            
+
             Task.Delay(1000);
         }
         else if (infoForCasts is not null)
         {
-            Console.WriteLine(Environment.NewLine + Environment.NewLine);
+            
             var _infoForCasts = infoForCasts;
             foreach (var item in _infoForCasts)
             {
+                logger.LogInformation(Environment.NewLine + Environment.NewLine);
                 var json = JsonConvert.SerializeObject(item, Formatting.Indented);
                 logger.LogInformation(json);
             }
@@ -120,8 +124,8 @@ internal class FinishingClass : FinishingClassBase
 
         List<object> smTpList = new List<object>();
         List<MethodInfo> smMtList = new List<MethodInfo>();
-        
-        if(currentAsm.MoveNext() )
+
+        if (currentAsm.MoveNext())
         {
             do
             {
@@ -172,18 +176,61 @@ internal class FinishingClass : FinishingClassBase
 
             if (smUnion is Type type)
             {
-                var smtpattr = type.GetCustomAttribute<SomeElementsInfos>();
-                logger.LogInformation("class name {0}, " + smtpattr.Details, Environment.NewLine + type.FullName);
+                attributeWorker(type);
+                #region MyRegion
+                //logger.LogInformation("class name {0}, " + someElementsInfos.Details, Environment.NewLine + type.FullName);
+
+                //var customattrs = type.GetCustomAttributes(typeof(SomeElementsInfos));
+                //if (customattrs is not null)
+                //{
+
+                //    foreach (var smtpattr in customattrs)
+                //    {
+                //        if (smtpattr is SomeElementsInfos someElementsInfos)
+                //        {
+                //            logger.LogInformation("class name {0}, " + someElementsInfos.Details, Environment.NewLine + type.FullName);
+                //        }
+                //    }
+                //} 
+                #endregion
             }
             else if (smUnion is MethodInfo method)
             {
-                var smmattr = method.GetCustomAttribute<SomeElementsInfos>();
-                logger.LogInformation("method name {0}, " + smmattr.Details, Environment.NewLine + method.Name);
+
+                var smmattrs = method.GetCustomAttributes(typeof(SomeElementsInfos));
+                if (smmattrs is not null)
+                {
+                    foreach (var smttr in smmattrs)
+                    {
+                        if (smttr is SomeElementsInfos smE)
+                            logger.LogInformation("method name {0}, " + smE.Details, Environment.NewLine + method.Name);
+                    }
+                }
+                //logger.LogInformation("method name {0}, " + smmattr.Details, Environment.NewLine + method.Name);
             }
 
         }
+    }
 
-        
+    void attributeWorker(Type smUnion)
+    {
+        //Unsafe.SkipInit(out someElementsInfos);
+
+        if (smUnion is Type type)
+        {
+            var customattrs = type.GetCustomAttributes(typeof(SomeElementsInfos));
+            if (customattrs is not null)
+            {
+
+                foreach (var smtpattr in customattrs)
+                {
+                    if (smtpattr is SomeElementsInfos smE)
+                    {
+                        logger.LogInformation("class name {0}, " + smE.Details, Environment.NewLine + type.FullName);
+                    }
+                }
+            }
+        }
     }
 }
 

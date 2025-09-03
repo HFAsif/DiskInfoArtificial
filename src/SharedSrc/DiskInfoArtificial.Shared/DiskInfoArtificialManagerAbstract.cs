@@ -5,9 +5,8 @@ namespace DiskInfoArtificial
     using Cta = Library.CAtaSmartArtificial;
     using System;
     using System.Collections.ObjectModel;
-    using static DiskInfoArtificial.Library.DiskInfoArtificialManager_Structures;
 
-    internal abstract class DiskInfoArtificialManagerAbstract 
+    abstract class DiskInfoArtificialManagerAbstract 
     {
         //string[] args { get; set; }
 
@@ -16,7 +15,7 @@ namespace DiskInfoArtificial
         public ObservableCollection< Dis.ATA_SMART_INFO> aTA_SMART_INFOs { get; protected set; }
         public abstract bool StartUp();
 
-        public abstract bool InternalStartup();
+        public abstract bool InternalStartup(out object result);
 
         //protected Dis.SMART_ATTRIBUTE[] SMART_ATTRIBUTE_LIST = new Dis.SMART_ATTRIBUTE[MAX_ATTRIBUTE];
 
@@ -42,7 +41,7 @@ namespace DiskInfoArtificial
 
         public virtual bool Initialize()
         {
-            aTA_SMART_INFOs = new ObservableCollection<ATA_SMART_INFO>();
+            aTA_SMART_INFOs = new ObservableCollection<Dis.ATA_SMART_INFO>();
 
             m_bAtaPassThrough = false;
             m_bAtaPassThroughSmart = false;

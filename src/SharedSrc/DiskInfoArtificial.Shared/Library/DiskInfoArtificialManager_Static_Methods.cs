@@ -6,7 +6,7 @@ using System;
 using System.Text;
 using static Impp;
 
-internal static class DiskInfoArtificialManager_Static_Methods_Internal
+static class DiskInfoArtificialManager_Static_Methods_Internal
 {
     public static int IOCTL_STORAGE_QUERY_PROPERTY = CTL_CODE(IOCTL_STORAGE_BASE, 0x0500, METHOD_BUFFERED, FILE_ANY_ACCESS);
     public static int IOCTL_SCSI_PASS_THROUGH = CTL_CODE(IOCTL_SCSI_BASE, 0x0401, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS);

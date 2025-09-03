@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary.CheckDiskInfos;
+﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 
 using System;
 using System.Collections;

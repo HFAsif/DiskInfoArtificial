@@ -1,11 +1,11 @@
-﻿namespace InternalLibrary;
+﻿namespace CrystalDiskInfoDotnet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-[AttributeUsage(AttributeTargets.All, AllowMultiple = false)]
+[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
 public class SomeElementsInfos : Attribute
 {
     public readonly string Details;

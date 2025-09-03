@@ -9,14 +9,14 @@
     <Import_RootNamespace>DiskInfoArtificial.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificial.Test.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificial.Internal.Native.Test.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManager.Partial.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManagerAbstract.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DiskInfoArtificialManagerAttr.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GlobalFunctions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IDiskInfoArtificialManager.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)JunkCodes.cs" />
+    <None Include="$(MSBuildThisFileDirectory)JunkCodes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\CAtaSmartArtificial.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\CAtaSmartArtificialBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Library\DiskInfoArtificialManager_NativeCaller.cs" />

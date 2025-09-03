@@ -1,6 +1,6 @@
 ﻿#pragma warning disable
 
-namespace InternalLibrary;
+namespace CrystalDiskInfoDotnet;
 
 using Microsoft.Extensions.Logging;
 using System;
@@ -18,18 +18,18 @@ public class CommandLineViewModule
     public class CommandLineParser
     {
         public required ILogger _logger;
-        public required string[] args;
 
         Dictionary<string, Option> optionsDict = new Dictionary<string, Option>(StringComparer.Ordinal);
         IList<Option> miscOptions = new List<Option>();
         IList<Option> fileOptions = new List<Option>();
         Option defaultOption;
-        public Cac.Options cacOptions {  get; set; }
+        string[] args;
+        public required Cac.Options cacOptions {  get; set; }
 
         public void Parse(Cac.Options options)
         {
             AddAllOptions();
-
+            args = options.args;
             if (args.Length == 0)
             {
                 
@@ -78,11 +78,9 @@ public class CommandLineViewModule
 
         void AddAllOptions()
         {
-            cacOptions = new Cac.Options();
             miscOptions.Add(new Cac.AdvanceNoArgOption("E", "Extended Infos", "Show this message"));
 
             miscOptions.Add(new Cac.AdvanceNoArgOption("O", "Optimized infos", "Show this message"));
-
             //miscOptions.Add(new Cac.AdvanceArgOption("r", null, "Scan for .NET files in all subdirs", "dir", (val) =>
             //{
             //    //cacOptions = new Cac.Options();
@@ -213,7 +211,7 @@ public class CommandLineViewModule
             }
         }
 
-        void Exit(int exitCode) => throw new InternalExceptions(exitCode);
+        void Exit(int exitCode) => throw new GettingExceptions(exitCode);
 
 
     }

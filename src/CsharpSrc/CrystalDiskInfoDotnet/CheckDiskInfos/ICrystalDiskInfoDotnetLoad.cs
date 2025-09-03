@@ -1,11 +1,10 @@
-﻿namespace DiskInfoArtificial.Test;
+﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-[AttributeUsage(AttributeTargets.Class)]
-internal class CheckInfos : Attribute
+public interface ICrystalDiskInfoDotnetLoad
 {
 }

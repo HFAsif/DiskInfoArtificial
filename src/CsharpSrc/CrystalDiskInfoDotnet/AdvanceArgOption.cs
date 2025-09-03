@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary;
+﻿namespace CrystalDiskInfoDotnet;
 
 using System;
 
@@ -6,6 +6,7 @@ public class CmdArgClass
 {
     public class Options
     {
+        public required string[] args;
         public CheckDiskInfos.OutPutInfos outPutInfos {  get; set; }
         public Options()
         {

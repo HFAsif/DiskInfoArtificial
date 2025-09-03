@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary.CheckDiskInfos;
+﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 using System.Linq;
 using System.Reflection;
 
@@ -10,7 +10,7 @@ class ExtendedInfos : ExtendOptimizedAbstract
 
     public override void Infos(FieldInfo fieldInfo, ref readonly object fieldVal)
     {
-        var infoFields = extendedInfos.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public);
+        var infoFields = extendedInfos.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
 
         var infoField = infoFields.ToList().Find(a => a.Name == fieldInfo.Name);
         if (infoField is not null)

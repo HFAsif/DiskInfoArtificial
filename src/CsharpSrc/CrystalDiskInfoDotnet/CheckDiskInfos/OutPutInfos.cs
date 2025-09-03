@@ -1,4 +1,4 @@
-﻿namespace InternalLibrary.CheckDiskInfos;
+﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 
 public enum OutPutInfos
 {

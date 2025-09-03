@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 namespace DiskInfoArtificial
 {
-    internal class DiskInfoArtificial_Test : DiskInfoArtificialManagerAbstract , IDiskInfoArtificialManager
+    class DiskInfoArtificial_Internal_Native_Test : DiskInfoArtificialManagerAbstract , IDiskInfoArtificialManager
     {
 
         [DllImport("DiskInfoArtificial.Native", EntryPoint = "Diskinfo_csharp_method", CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
@@ -24,7 +24,7 @@ namespace DiskInfoArtificial
         {
         }
 
-        public override bool InternalStartup()
+        public override bool InternalStartup(out object result)
         {
             throw new System.NotImplementedException();
         }

@@ -14,7 +14,7 @@ namespace DiskInfoArtificial
     using System.Diagnostics;
 
    
-    internal partial class DiskInfoArtificialManager
+    partial class DiskInfoArtificialManager
     {
         bool SendAtaCommandPd(int physicalDriveId, byte target, byte main, byte sub, byte param, ref IDENTIFY_DEVICE data, uint dataSize)
         {

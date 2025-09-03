@@ -5,7 +5,7 @@ namespace DiskInfoArtificial.Library
     using System;
     using System.Runtime.InteropServices;
 
-    internal class DiskInfoArtificialManager_NativeCaller_Internal
+    class DiskInfoArtificialManager_NativeCaller_Internal
     {
         [DllImport("kernel32.dll", EntryPoint = "DeviceIoControl", CharSet = CharSet.Unicode, SetLastError = true)]
         public static extern bool DeviceIoControlSpecific(

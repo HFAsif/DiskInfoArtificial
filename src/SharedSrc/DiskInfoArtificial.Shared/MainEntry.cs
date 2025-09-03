@@ -12,6 +12,8 @@ using System.Threading;
 
 public class MainEntry
 {
+    public static void Run(out object ataLists) => Run(false, out ataLists, null);
+
     [STAThread]
     public static void Run(bool nativeTest, out object ataLists , params string[] args)
     {
@@ -27,7 +29,7 @@ public class MainEntry
             DiskInfoArtificialManagerAbstract diskInfoArtificialManager = default;
             if (nativeTest)
             {
-                diskInfoArtificialManager = new DiskInfoArtificial_Test()
+                diskInfoArtificialManager = new DiskInfoArtificial_Internal_Native_Test()
                 { args = args };
                 diskInfoArtificialManager.StartUp();
             }
@@ -42,12 +44,7 @@ public class MainEntry
                 {
                     if (diskInfoArtificialManager.StartUp())
                     {
-                        diskInfoArtificialManager.InternalStartup();
-
-
-                        ataLists = diskInfoArtificialManager.aTA_SMART_INFOs;
-
-
+                        diskInfoArtificialManager.InternalStartup(out ataLists);
                     }
                     else Debugger.Break();
                 }

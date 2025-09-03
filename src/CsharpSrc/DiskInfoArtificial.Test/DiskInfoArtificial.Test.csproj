@@ -43,7 +43,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\InternalLibrary\InternalLibrary.csproj" />
+	  <ProjectReference Include="..\CrystalDiskInfoDotnet\CrystalDiskInfoDotnet.csproj" />
 	</ItemGroup>
 
 	

@@ -4,7 +4,7 @@
     using System;
     using System.Runtime.InteropServices;
 
-    internal class CAtaSmartArtificialBase : CAtaSmartArtificialBaseBase
+    class CAtaSmartArtificialBase : CAtaSmartArtificialBaseBase
     {
         [DllImport("advapi32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]

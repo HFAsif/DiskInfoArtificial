@@ -8,7 +8,7 @@ namespace DiskInfoArtificial.Library
     using static Impp;
     using HelperClass;
 
-    internal sealed class CAtaSmartArtificial : CAtaSmartArtificialBase
+    sealed class CAtaSmartArtificial : CAtaSmartArtificialBase
     {
         private static IntPtr CreateSD(ref IntPtr pDacl, string name)
         {

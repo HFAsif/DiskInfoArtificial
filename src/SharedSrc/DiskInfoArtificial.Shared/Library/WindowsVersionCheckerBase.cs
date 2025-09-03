@@ -2,7 +2,7 @@
 namespace DiskInfoArtificial.Library
 {
     using System.Runtime.InteropServices;
-    internal class WindowsVersionCheckerBase : WindowsVersionCheckerBaseBase
+    class WindowsVersionCheckerBase : WindowsVersionCheckerBaseBase
     {
         [DllImport("kernel32.dll")]
         protected static extern ulong VerSetConditionMask(

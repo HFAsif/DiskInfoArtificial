@@ -9,7 +9,7 @@ namespace DiskInfoArtificial.Library
     using static Impp;
     using System;
 
-    internal class DiskInfoArtificialManager_Structures 
+    class DiskInfoArtificialManager_Structures 
     {
         public static readonly string[] commandTypeString =
         {

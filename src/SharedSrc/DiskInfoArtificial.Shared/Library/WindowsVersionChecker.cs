@@ -3,7 +3,7 @@ namespace DiskInfoArtificial.Library
 {
     using System.Runtime.InteropServices;
     using static Impp;
-    internal class WindowsVersionChecker : WindowsVersionCheckerBase
+    class WindowsVersionChecker : WindowsVersionCheckerBase
     {
         public static bool IsWindowsVersionOrGreaterFx(ushort wMajorVersion, ushort wMinorVersion, ushort wServicePackMajor = 0)
         {

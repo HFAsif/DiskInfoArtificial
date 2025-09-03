@@ -3,6 +3,8 @@
 	<!--<Import Condition="'$(TargetFramework)' == 'net40-Client' Or '$(TargetFramework)' == 'net40' " Project="$(SolutionDir)_configs/dotnetFour.props" />-->
 	
 	<Import Project="$(SolutionDir)_configs/dotnetframeworkscustom.props" />
+
+	<Import Condition="'$(TargetFramework)' == 'net40' Or '$(TargetFramework)' == 'net40-Client'" Project="$(SolutionDir)_configs/dotnetFour.props" />
 	
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,7 +13,64 @@
 	  <OutputType>Library</OutputType>
 	  <Configurations>Debug;Release;net_4_0_Debug</Configurations>
 	  <DefineConstants>$(DefineConstants);ThisProjectAvailable;</DefineConstants>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Title>DiskInfoArtificial dotnet</Title>
+	  <Authors>HFAsif</Authors>
+	  <Description>Get more information of ssd and nvme. this project is csharp form of crystal disk infos</Description>
+	  <Copyright>https://github.com/hiyohiyo/CrystalDiskInfo</Copyright>
+	  <PackageProjectUrl>https://github.com/HFAsif/DiskInfoArtificial</PackageProjectUrl>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <RepositoryUrl>https://github.com/HFAsif/DiskInfoArtificial</RepositoryUrl>
+	  <PackageTags>CrystalDiskinfo Dotnet</PackageTags>
+	  <NeutralLanguage>en-US</NeutralLanguage>
+	  <PackageReleaseNotes>This project in csharp form of crystal disk info c++</PackageReleaseNotes>
+	  <PackAsTool>False</PackAsTool>
   </PropertyGroup>
+
+	<Import Project="..\..\SharedSrc\DiskInfoArtificial.Shared\DiskInfoArtificial.Shared.projitems" Label="Shared" />
+
+	<ItemGroup>
+	  <None Include="..\..\..\..\..\Downloads\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\DiskInfoArtificial.Extension\DiskInfoArtificial.Extension.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals('$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)'))','4.5'))">
+		<PackageReference Include="System.Management">
+			<Version>9.0.8</Version>
+		</PackageReference>
+
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+	</ItemGroup>
+
+</Project>
+
+
+
+
+	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net40'">
+		<NoStdLib>true</NoStdLib>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net40'">
+		<Reference Include="mscorlib">
+			<HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\mscorlib.dll</HintPath>
+		</Reference>
+
+		<Reference Include="System.Management">
+			<HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Management.dll</HintPath>
+		</Reference>
+		
+		<Reference Include="System.Runtime.CompilerServices.Unsafe">
+			<HintPath>..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\PublicAssemblies\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+		</Reference>
+	</ItemGroup>-->
+	
 
 	<!--<Choose>
 		<When Condition="'$(Platform)'=='x86'">
@@ -33,21 +92,9 @@
 
 	
 
-	<Import Project="..\..\SharedSrc\DiskInfoArtificial.Shared\DiskInfoArtificial.Shared.projitems" Label="Shared" />
-
-	<ItemGroup>
-	  <ProjectReference Include="..\DiskInfoArtificial.Extension\DiskInfoArtificial.Extension.csproj" />
-	</ItemGroup>
-
-	<ItemGroup Condition="$([MSBuild]::VersionGreaterThanOrEquals('$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)'))','4.5'))">
-	  <PackageReference Include="System.Management">
-	    <Version>9.0.8</Version>
-	  </PackageReference>
-
-		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
-	</ItemGroup>
+	
 
 
 	
 
-</Project>
+

@@ -1,24 +1,23 @@
-using System;
+global using Cmd = CrystalDiskInfoDotnet.CommandLineViewModule;
+global using Cac = CrystalDiskInfoDotnet.CmdArgClass;
+global using Dip = HelperClass.NativeCallerExternal;
+
+
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
-using System.Security.Permissions;
+//[assembly : InternalsVisibleTo("DiskInfoArtificial.Test")]
 
 //[assembly: ComVisible(false)]
 //[assembly: CLSCompliant(true)]
-
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable SYSLIB0003
-[assembly: SecurityPermission(SecurityAction.RequestMinimum, UnmanagedCode = true)]
-#pragma warning restore SYSLIB0003
-#pragma warning restore CS0618 // Type or member is obsolete
+//[assembly: SecurityPermission(SecurityAction.RequestMinimum, UnmanagedCode = true)]
 
 
-[assembly: AssemblyTitle("DiskInfoArtificial")]
-[assembly: AssemblyDescription("CrystalDiskInfo Artificial in c#")]
+[assembly: AssemblyTitle("CrystalDiskInfoDotnet")]
+[assembly: AssemblyDescription("CrystalDiskInfoDotnet Library class")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IDiskInfoArtificial")]
+[assembly: AssemblyProduct("CrystalDiskInfoDotnet")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: ComVisible(false)]
@@ -27,4 +26,3 @@ using System.Security.Permissions;
 [assembly: AssemblyInformationalVersion("1.0.0")]
 [assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: CLSCompliant(true)] 
