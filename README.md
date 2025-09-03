@@ -6,10 +6,8 @@ this project wasnt completed , i have commented where i have ended
 
 Nuget Packages
 
-[Extract List ssd and nvme information]
-(https://www.nuget.org/packages/CrystalDiskInfoDotnet)
-[Crystal Disk Infos dotnet]
-(https://www.nuget.org/packages/DiskInfoArtificial)
+[Extract List ssd and nvme information](https://www.nuget.org/packages/CrystalDiskInfoDotnet)
+[Crystal Disk Infos dotnet](https://www.nuget.org/packages/DiskInfoArtificial)
 
 To run it on windows xp u have to compile the project with net40 , take a look at dotnetfour.prop , it should be successfull compile with dotnet 4 but will works or not idont know because didnt tested yet ,
 
