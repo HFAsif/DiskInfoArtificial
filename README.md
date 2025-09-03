@@ -28,5 +28,4 @@ still 50% exist
 example 
 <img width="1920" height="1030" alt="{3F5CD021-19C8-4837-99AD-B5A4740ACD54}" src="https://github.com/user-attachments/assets/214340bd-0b31-47db-93dc-b1bd61271f82" />
 
-![unknown_2025 08 31-23 45](https://github.com/user-attachments/assets/977214d8-f41e-4d65-8b4d-05ad9767b003)
 
