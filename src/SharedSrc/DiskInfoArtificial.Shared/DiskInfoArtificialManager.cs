@@ -84,8 +84,33 @@ namespace DiskInfoArtificial
 
             
 
-            ManagementObjectSearcher moSearcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
-            foreach (var _drive in moSearcher.Get())
+// Make a connection to a remote computer.
+// Replace the "FullComputerName" section of the
+// string "\\\\FullComputerName\\root\\cimv2" with
+// the full computer name or IP address of the
+// remote computer.
+ManagementScope scope =
+    new ManagementScope(
+    "\\\\.\\root\\cimv2");
+scope.Connect();
+
+// Use this code if you are connecting with a
+// different user name and password:
+//
+// ManagementScope scope =
+//    new ManagementScope(
+//        "\\\\FullComputerName\\root\\cimv2", options);
+// scope.Connect();
+
+//Query system for Operating System information
+ObjectQuery query = new ObjectQuery(
+    "SELECT * FROM Win32_DiskDrive");
+ManagementObjectSearcher searcher =
+    new ManagementObjectSearcher(scope, query);
+
+ManagementObjectCollection queryCollection = searcher.Get();
+
+            foreach (var _drive in queryCollection)
             {
                 string model = default, deviceId, diskSize, mediaType = default, interfaceTypeWmi = default, pnpDeviceId = default, firmware = default;
                 int physicalDriveId = -1, scsiPort = -1, scsiTargetId = -1, scsiBus = -1;
