@@ -3,6 +3,8 @@
 	<!--<Import Condition="'$(TargetFramework)' == 'net40-Client' Or '$(TargetFramework)' == 'net40' " Project="$(SolutionDir)_configs/dotnetFour.props" />-->
 	
 	<Import Project="$(SolutionDir)_configs/dotnetframeworkscustom.props" />
+	
+	<Import Project="..\..\SharedSrc\DiskInfoArtificial.Shared\DiskInfoArtificial.Shared.projitems" Label="Shared" />
 
 	<Import Condition="'$(TargetFramework)' == 'net40' Or '$(TargetFramework)' == 'net40-Client'" Project="$(SolutionDir)_configs/dotnetFour.props" />
 	
@@ -26,15 +28,17 @@
 	  <PackageReleaseNotes>This project in csharp form of crystal disk info c++</PackageReleaseNotes>
 	  <PackAsTool>False</PackAsTool>
   </PropertyGroup>
-
-	<Import Project="..\..\SharedSrc\DiskInfoArtificial.Shared\DiskInfoArtificial.Shared.projitems" Label="Shared" />
-
-	<ItemGroup>
-	  <None Include="..\..\..\..\..\Downloads\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
+	
+  <ItemGroup>
+    <None Remove="C:\Users\Admin\source\repos\DiskInfoArtificial\\README.md" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Desktop\DiskInfoArtificial-master\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\DiskInfoArtificial.Extension\DiskInfoArtificial.Extension.csproj" />

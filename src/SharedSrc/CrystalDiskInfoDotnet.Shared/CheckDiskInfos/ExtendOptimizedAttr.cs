@@ -1,4 +1,5 @@
-﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
+﻿#nullable enable
+namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 using System;
 using System.Collections;
 using System.Collections.Generic;

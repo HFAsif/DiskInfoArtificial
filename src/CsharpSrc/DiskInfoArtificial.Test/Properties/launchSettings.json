@@ -2,7 +2,7 @@
   "profiles": {
     "DiskInfoArtificial.Test": {
       "commandName": "Project",
-      "commandLineArgs": "-E ex"
+      "commandLineArgs": "-O op"
     }
   }
 }

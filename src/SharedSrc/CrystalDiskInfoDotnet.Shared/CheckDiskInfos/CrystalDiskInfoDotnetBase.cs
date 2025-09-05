@@ -1,6 +1,5 @@
 ﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 
-using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System;
 using System.Reflection;
@@ -16,7 +15,6 @@ public abstract class CrystalDiskInfoDotnetBase
     public required OutPutInfos outPutInfos { get; set; }
 
     public required string DiskInfoArtificialEndedAt { get; set; }
-    public required ILogger logger { get; set; }
 
     [SomeElementsInfos("The code copied from wwh00")]
     private static T GetAssemblyAttribute<T>()

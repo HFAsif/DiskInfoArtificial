@@ -1,4 +1,5 @@
-﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
+﻿#nullable enable
+namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 using System;
 using System.Runtime.InteropServices;
 
@@ -67,10 +68,9 @@ public record ExtendedInfosStruct
     public uint? PowerOnCount{ get; set; }
     public int? Temperature{ get; set; }
 
+
     [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-#pragma warning disable CS0649 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
     public int[]? TemperatureNVMe;
-#pragma warning restore CS0649 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
     public double? TemperatureMultiplier{ get; set; }
     public uint? NominalMediaRotationRate{ get; set; }

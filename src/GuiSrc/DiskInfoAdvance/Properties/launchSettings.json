@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DiskInfoAdvance (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DiskInfoAdvance (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

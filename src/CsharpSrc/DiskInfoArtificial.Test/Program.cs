@@ -18,7 +18,7 @@ internal partial class Program
 
         if(extractionType == ExtractionType.NugetExtraction)
         {
-            CrystalDiskInfoDotnetLoad.ExtractFullInfos(out var vals);
+            CrystalDiskInfoDotnetLoad.ExtractOptimizedInfos(out var vals);
         }
         else
         {
@@ -50,7 +50,7 @@ internal partial class Program
                 logger.LogInformation($"Infos Extracted Ended in {dcEnd}");
 
                 var options = new Cac.Options() { args = args };
-                var cmParser = new Cmd.CommandLineParser() { cacOptions = options, _logger = logger };
+                var cmParser = new Cmd.CommandLineParser() { cacOptions = options };
 
 
                 cmParser.Parse(options);

@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+	<Import Project="..\..\SharedSrc\CrystalDiskInfoDotnet.Shared\CrystalDiskInfoDotnet.Shared.projitems" Label="Shared" />
+
 	<Import Project="$(SolutionDir)_configs/dotnetframeworks.props" />
 
 	<PropertyGroup>
@@ -17,15 +19,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="CheckDiskInfos\DiskInfoArtificialCheckEx.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="..\..\..\..\..\Downloads\README.md">
+	  <None Include="..\..\..\..\..\..\Desktop\DiskInfoArtificial-master\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
-	  <None Include="CheckDiskInfos\DiskInfoArtificialCheckEx.cs" />
 	</ItemGroup>
 
 	<ItemGroup>

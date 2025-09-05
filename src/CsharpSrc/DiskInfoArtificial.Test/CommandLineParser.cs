@@ -2,7 +2,7 @@
 
 namespace CrystalDiskInfoDotnet;
 
-using Microsoft.Extensions.Logging;
+using HelperClass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +17,7 @@ public class CommandLineViewModule
 {
     public class CommandLineParser
     {
-        public required ILogger _logger;
+        //public required ILogger _logger;
 
         Dictionary<string, Option> optionsDict = new Dictionary<string, Option>(StringComparer.Ordinal);
         IList<Option> miscOptions = new List<Option>();
@@ -128,7 +128,7 @@ public class CommandLineViewModule
 
         void PrintInfos(string desc, Infos infos)
         {
-            _logger.LogInformation("{0}", desc);
+            ALLExtensions.Log("{0}", desc);
             foreach (var info in infos.GetInfos())
                 PrintOptionAndExplanation(info.name, info.desc);
         }
@@ -136,7 +136,7 @@ public class CommandLineViewModule
         void ExitError(string msg)
         {
             Usage();
-            _logger.LogError("\n\nERROR: {0}\n", msg);
+            ALLExtensions.Log("\n\nERROR: {0}\n", msg);
             Exit(2);
         }
 
@@ -159,11 +159,11 @@ public class CommandLineViewModule
             string left = string.Format($"{{0,-{maxCols}}}", option);
             if (option.Length > maxCols)
             {
-                _logger.LogInformation("{0}{1}", prefix, left);
-                _logger.LogInformation("{0}{1} {2}", prefix, new string(' ', maxCols), explanation);
+                ALLExtensions.Log("{0}{1}", prefix, left);
+                ALLExtensions.Log("{0}{1} {2}", prefix, new string(' ', maxCols), explanation);
             }
             else
-                _logger.LogInformation("{0}{1} {2}", prefix, left, explanation);
+                ALLExtensions.Log("{0}{1} {2}", prefix, left, explanation);
         }
 
         string GetOptionAndArgName(Option option, string optionName)

@@ -1,10 +1,6 @@
 ﻿namespace CrystalDiskInfoDotnet.CheckDiskInfos;
 
 using DiskInfoArtificial;
-using Microsoft.Extensions.Logging;
-using System.Threading.Tasks;
-using System.Xml;
-using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;

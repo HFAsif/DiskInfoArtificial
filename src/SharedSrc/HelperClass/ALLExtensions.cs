@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace HelperClass
@@ -31,6 +32,11 @@ namespace HelperClass
             vals = Marshal.PtrToStructure<T>(allocs);
 
             allocs.FreePtr();
+        }
+
+        public static void Log(params object[] args)
+        {
+            Debug.WriteLine(args);
         }
 
         //#if NET48_OR_GREATER || NET5_0_OR_GREATER

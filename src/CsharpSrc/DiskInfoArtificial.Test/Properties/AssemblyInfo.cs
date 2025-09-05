@@ -1,3 +1,7 @@
+#if EnvDTE
+global using Dip = HelperClass.NativeCallerExternal;
+#endif
+
 global using Cmd = CrystalDiskInfoDotnet.CommandLineViewModule;
 global using Cac = CrystalDiskInfoDotnet.CmdArgClass;
 

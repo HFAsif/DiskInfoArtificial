@@ -1,7 +1,3 @@
-global using Cmd = CrystalDiskInfoDotnet.CommandLineViewModule;
-global using Cac = CrystalDiskInfoDotnet.CmdArgClass;
-global using Dip = HelperClass.NativeCallerExternal;
-
 
 using System.Reflection;
 using System.Resources;

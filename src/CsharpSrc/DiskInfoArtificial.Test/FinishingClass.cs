@@ -15,6 +15,7 @@ using CrystalDiskInfoDotnet;
 
 internal class FinishingClass : CrystalDiskInfoDotnetBase
 {
+    public required ILogger logger { get; set; }
 
     [SomeElementsInfos("Coded internal")]
     [FinishingClassAttr]
