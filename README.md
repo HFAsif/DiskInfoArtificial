@@ -12,13 +12,6 @@ Nuget Packages
 
 To run it on windows xp u have to compile the project with net40 , take a look at dotnetfour.prop , it should be successfull compile with dotnet 4 but will works or not idont know because didnt tested yet ,
 
-if you windows locked in folder access 
-
-<img width="944" height="424" alt="{91285FDB-B9E5-46D4-B491-E0471C1EA3B3}" src="https://github.com/user-attachments/assets/33cc82f5-7ce1-4bf9-af63-611ac3c6e142" />
-
-then u will getting exception at ata extraction , but if you comment ata extraction then u will get nvme information only even this option check at ur pc ,
-u ur windows checked it then u have to uncheck this option , 
-
 select x86 or x64 bit , do not run at AnyCPU , it will be crash or u will get corrupted information , 
 
 u can get information in two format cmd ; args 
